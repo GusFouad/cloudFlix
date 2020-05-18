@@ -55,3 +55,6 @@ li a {
 .search-input {
 	width: 100%;
 }
+.navbar-sidenav li {
+	padding: 2rem;
+}
