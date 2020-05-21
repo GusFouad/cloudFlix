@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config.json';
+import { getUser } from '../services/authService';
 import MovieList from './MovieList';
 import MovieInfo from './MovieInfo';
 import Pagination from './Pagination';
@@ -20,11 +21,12 @@ class Search extends Component {
 		e.preventDefault();
 		await axios(config.movieApi + this.state.search).then(({ data }) => {
 			let movies = data.results;
+			const user = getUser();
 			this.setState({
 				movies: [ ...movies ],
 				totalResults: data.total_results
 			});
-			console.log(data.results, data.results[0].poster_path);
+			console.log('ALREADY LISTER', user);
 		});
 	};
 	handlePageChange = (page) => {
@@ -43,8 +45,10 @@ class Search extends Component {
 	closeMovieInfo = () => {
 		this.setState({ currentMovie: null });
 	};
+
 	render() {
 		const numberPages = Math.floor(this.state.totalResults / 21);
+		const user = getUser();
 		return (
 			<div>
 				{this.state.currentMovie === null ? (
@@ -81,7 +85,10 @@ class Search extends Component {
 								<div className="row">
 									<section>
 										<form onSubmit={this.handleSubmit}>
-											<div>
+											<div className="search-box">
+												<div>
+													<i className="material-icons">search</i>
+												</div>
 												<input
 													type="text"
 													placeholder="Search movies"
@@ -93,7 +100,12 @@ class Search extends Component {
 								</div>
 							</div>
 						</div>
-						<MovieInfo currentMovie={this.state.currentMovie} closeMovieInfo={this.closeMovieInfo} />
+						<MovieInfo
+							user={user}
+							alreadyListed={this.alreadyListed}
+							currentMovie={this.state.currentMovie}
+							closeMovieInfo={this.closeMovieInfo}
+						/>
 					</div>
 				)}
 				{this.state.totalResults > 20 && this.state.currentMovie === null ? (

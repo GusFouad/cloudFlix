@@ -1,9 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import { getUser } from '../services/authService';
-const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd }) => {
+const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, user, alreadyListed }) => {
+	alreadyListed = (user) => {
+		let listed = '';
+		const movies = user.movies;
+		for (let i = 0; i < movies.length; i++) {
+			if (movies[i].movieId === currentMovie.id) {
+				listed = 'LISTED';
+			} else {
+				listed = null;
+			}
+		}
+		return listed;
+	};
 	onClickAdd = async () => {
-		const user = getUser();
 		const movie = {
 			movieId: currentMovie.id
 		};
@@ -14,14 +25,17 @@ const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd }) => {
 					Authorization: window.localStorage.getItem('token')
 				}
 			})
-			.then((r) => console.log(r, 'Successfully added to your watchlist', 'THIS IS USER', user));
+			.then((r) => console.log(r, 'Successfully added to your watchlist', 'THIS IS USER'));
 	};
+	const listed = alreadyListed(user);
+	console.log(listed);
 
 	return (
 		<div className="container">
 			<div className="row" onClick={closeMovieInfo} style={{ cursor: 'pointer', paddingTop: 50 }}>
-				<i className="fas fa-arrow-left"> Back</i>
-				<span />
+				<h5>
+					<i className="material-icons">arrow_back</i>Back
+				</h5>
 			</div>
 			<div className="row">
 				<div className="col s12 m4">
@@ -46,7 +60,11 @@ const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd }) => {
 						<p>{currentMovie.release_date}</p>
 						<p>{currentMovie.overview}</p>
 					</div>
-					<button onClick={onClickAdd}>Add To Watch List</button>
+					{listed === null ? (
+						<button onClick={onClickAdd}>Add To Watch List</button>
+					) : (
+						<p>Movie already on your watchlist</p>
+					)}
 				</div>
 			</div>
 		</div>
