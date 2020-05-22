@@ -23,7 +23,7 @@ p {
 }
 
 .card .card-content {
-	padding: 2rem 0 !important;
+	padding: 2rem 0 0 !important;
 	text-align: center;
 }
 .home {
@@ -57,4 +57,20 @@ li a {
 }
 .navbar-sidenav li {
 	padding: 2rem;
+}
+h6 {
+	background: #47e747;
+	padding: 1rem;
+	width: 50%;
+}
+.back-button {
+	display: flex;
+	width: 50% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 2rem;
+	align-items: center;
+}
+.add-circle {
+	margin: 0;
 }

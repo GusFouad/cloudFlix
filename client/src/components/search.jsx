@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../config.json';
 import { getUser } from '../services/authService';
+import { getMovies } from './../services/movieService';
 import MovieList from './MovieList';
 import MovieInfo from './MovieInfo';
 import Pagination from './Pagination';
@@ -12,22 +13,41 @@ class Search extends Component {
 		search: '',
 		totalResults: 0,
 		currentPage: 1,
-		currentMovie: null
+		currentMovie: null,
+		alreadyListed: null
 	};
 	handleChange = (e) => {
 		this.setState({ search: e.target.value });
 	};
 	handleSubmit = async (e) => {
 		e.preventDefault();
-		await axios(config.movieApi + this.state.search).then(({ data }) => {
+		await axios(process.env.REACT_APP_MOVIE_API + this.state.search).then(({ data }) => {
 			let movies = data.results;
+			const movieIds = [];
+			for (let i = 0; i < movies.length; i++) {
+				movieIds.push(movies[i].id);
+			}
+			// console.log(movieIds);
 			const user = getUser();
+
 			this.setState({
 				movies: [ ...movies ],
 				totalResults: data.total_results
 			});
-			console.log('ALREADY LISTER', user);
+			// this.isAlreadyListed(movieIds);
+			// console.log('LISTED???', this.state.alreadyListed, movieIds);
 		});
+	};
+	isAlreadyListed = async (searchReturn) => {
+		const { data } = await getMovies();
+		let listed = null;
+		for (let i = 0; i < data.length; i++) {
+			if (data[i].movieId === this.state.currentMovie.id) {
+				listed = 'Listed';
+			}
+		}
+		console.log(this.state.alreadyListed);
+		this.setState({ alreadyListed: listed });
 	};
 	handlePageChange = (page) => {
 		console.log(page);
@@ -37,11 +57,26 @@ class Search extends Component {
 			this.setState({ movies: [ ...data.results ], currentPage: pageNumber });
 		});
 	};
-	viewMovieInfo = (id) => {
+	viewMovieInfo = async (id) => {
 		const filteredMovie = this.state.movies.filter((movie) => movie.id === id);
 		const newCurrentMovie = filteredMovie.length > 0 ? filteredMovie[0] : null;
 		this.setState({ currentMovie: newCurrentMovie });
+		this.isAlreadyListed();
 	};
+
+	// onClickQuickAdd = async () => {
+	// 	const movie = {
+	// 		movieId: this.state.currentMovie.id
+	// 	};
+	// 	await axios
+	// 		.post(process.env.REACT_APP_API_URL + '/movies/add', movie, {
+	// 			headers: {
+	// 				Authorization: window.localStorage.getItem('token')
+	// 			}
+	// 		})
+	// 		.then((r) => console.log('Successfully added to your watchlist'));
+	// 	this.isAlreadyListed();
+	// };
 	closeMovieInfo = () => {
 		this.setState({ currentMovie: null });
 	};
@@ -76,7 +111,12 @@ class Search extends Component {
 								</div>
 							</div>
 						</div>
-						<MovieList viewMovieInfo={this.viewMovieInfo} movies={this.state.movies} />
+						<MovieList
+							onClickQuickAdd={this.onClickQuickAdd}
+							viewMovieInfo={this.viewMovieInfo}
+							movies={this.state.movies}
+							alreadyListed={this.state.alreadyListed}
+						/>
 					</div>
 				) : (
 					<div>
@@ -102,7 +142,8 @@ class Search extends Component {
 						</div>
 						<MovieInfo
 							user={user}
-							alreadyListed={this.alreadyListed}
+							isAlreadyListed={this.isAlreadyListed}
+							alreadyListed={this.state.alreadyListed}
 							currentMovie={this.state.currentMovie}
 							closeMovieInfo={this.closeMovieInfo}
 						/>

@@ -1,41 +1,25 @@
 import React from 'react';
 import axios from 'axios';
-import { getUser } from '../services/authService';
-const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, user, alreadyListed }) => {
-	alreadyListed = (user) => {
-		let listed = '';
-		const movies = user.movies;
-		for (let i = 0; i < movies.length; i++) {
-			if (movies[i].movieId === currentMovie.id) {
-				listed = 'LISTED';
-			} else {
-				listed = null;
-			}
-		}
-		return listed;
-	};
+import { getMovies } from './../services/movieService';
+const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, isAlreadyListed, alreadyListed }) => {
 	onClickAdd = async () => {
 		const movie = {
 			movieId: currentMovie.id
 		};
-
 		await axios
 			.post(process.env.REACT_APP_API_URL + '/movies/add', movie, {
 				headers: {
 					Authorization: window.localStorage.getItem('token')
 				}
 			})
-			.then((r) => console.log(r, 'Successfully added to your watchlist', 'THIS IS USER'));
+			.then((r) => console.log('Successfully added to your watchlist'));
+		isAlreadyListed();
 	};
-	const listed = alreadyListed(user);
-	console.log(listed);
-
 	return (
 		<div className="container">
-			<div className="row" onClick={closeMovieInfo} style={{ cursor: 'pointer', paddingTop: 50 }}>
-				<h5>
-					<i className="material-icons">arrow_back</i>Back
-				</h5>
+			<div className="row back-button" onClick={closeMovieInfo} style={{ cursor: 'pointer', paddingTop: 50 }}>
+				<i className="material-icons med">arrow_back</i>
+				<p>Back</p>
 			</div>
 			<div className="row">
 				<div className="col s12 m4">
@@ -60,10 +44,10 @@ const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, user, alreadyList
 						<p>{currentMovie.release_date}</p>
 						<p>{currentMovie.overview}</p>
 					</div>
-					{listed === null ? (
+					{alreadyListed === null ? (
 						<button onClick={onClickAdd}>Add To Watch List</button>
 					) : (
-						<p>Movie already on your watchlist</p>
+						<h6>This movie is on your list!</h6>
 					)}
 				</div>
 			</div>

@@ -13,6 +13,8 @@ const MovieList = (props) => {
 								viewMovieInfo={props.viewMovieInfo}
 								movieId={movie.id}
 								movieTitle={movie.original_title}
+								onClickQuickAdd={props.onClickQuickAdd}
+								alreadyListed={props.alreadyListed}
 							/>
 						);
 					})}
