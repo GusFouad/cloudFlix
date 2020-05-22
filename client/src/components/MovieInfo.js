@@ -1,19 +1,22 @@
 import React from 'react';
 import axios from 'axios';
 import { getMovies } from './../services/movieService';
-const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, isAlreadyListed, alreadyListed }) => {
+const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, isAlreadyListed, alreadyListed, user }) => {
 	onClickAdd = async () => {
 		const movie = {
 			movieId: currentMovie.id
 		};
-		await axios
-			.post(process.env.REACT_APP_API_URL + '/movies/add', movie, {
-				headers: {
-					Authorization: window.localStorage.getItem('token')
-				}
-			})
-			.then((r) => console.log('Successfully added to your watchlist'));
-		isAlreadyListed();
+		if (user) {
+			return await axios
+				.post(process.env.REACT_APP_API_URL + '/movies/add', movie, {
+					headers: {
+						Authorization: window.localStorage.getItem('token')
+					}
+				})
+				.then((r) => isAlreadyListed(), console.log('Successfully added to your watchlist', user));
+		} else {
+			window.location = '/login';
+		}
 	};
 	return (
 		<div className="container">
