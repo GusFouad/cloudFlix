@@ -57,7 +57,7 @@ class NavBar extends Component {
 					</div>
 				</nav>
 				<div className="section navbar-sidenav">
-					<ul id="slide-out" className="sidenav col s12 center-align section divider">
+					<ul id="slide-out" className="sidenav sidenav-close col s12 center-align section divider">
 						<li>
 							<NavLink to="/search">Search</NavLink>
 						</li>
