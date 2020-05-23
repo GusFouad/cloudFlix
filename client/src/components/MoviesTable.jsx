@@ -74,7 +74,7 @@ class MoviesTable extends Component {
 						</tbody>
 					</table>
 				</div>
-				<div className="table-small-media">
+				{/* <div className="table-small-media">
 					<MovieInfo
 						user={user}
 						isAlreadyListed={this.isAlreadyListed}
@@ -83,7 +83,7 @@ class MoviesTable extends Component {
 						closeMovieInfo={this.closeMovieInfo}
 						handleDelete={this.handleDelete}
 					/>
-				</div>
+				</div> */}
 			</div>
 		);
 	}

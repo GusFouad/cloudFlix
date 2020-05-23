@@ -70,11 +70,6 @@ li a {
 .add-circle {
 	margin: 0;
 }
-@media only screen and (max-width: 740px) {
-	.table-media {
-		display: none;
-	}
-}
 .buttons-movie-info {
 	display: flex;
 	padding: 0;
@@ -88,4 +83,18 @@ li a {
 .buttons-movie-info button {
 	margin: 0 2rem;
 	width: 50%;
+}
+
+@media only screen and (max-width: 740px) {
+	.table-media {
+		display: none;
+	}
+	.my-movie-list {
+		display: block;
+	}
+}
+@media only screen and (min-width: 740px) {
+	.my-movie-list {
+		display: none;
+	}
 }

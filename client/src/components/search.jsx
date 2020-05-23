@@ -63,6 +63,9 @@ class Search extends Component {
 		this.setState({ currentMovie: newCurrentMovie });
 		this.isAlreadyListed();
 	};
+	closeMovieInfo = () => {
+		this.setState({ currentMovie: null });
+	};
 
 	// onClickQuickAdd = async () => {
 	// 	const movie = {
@@ -77,9 +80,6 @@ class Search extends Component {
 	// 		.then((r) => console.log('Successfully added to your watchlist'));
 	// 	this.isAlreadyListed();
 	// };
-	closeMovieInfo = () => {
-		this.setState({ currentMovie: null });
-	};
 	handleDelete = async (movie) => {
 		await axios.delete(process.env.REACT_APP_API_URL + '/movies/' + movie.id, {
 			headers: {
@@ -129,7 +129,7 @@ class Search extends Component {
 					<div>
 						<div className="container">
 							<div>
-								<div className="row">
+								{/* <div className="row">
 									<section>
 										<form onSubmit={this.handleSubmit}>
 											<div className="search-box">
@@ -144,7 +144,7 @@ class Search extends Component {
 											</div>
 										</form>
 									</section>
-								</div>
+								</div> */}
 							</div>
 						</div>
 						<MovieInfo
