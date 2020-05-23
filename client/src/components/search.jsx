@@ -34,8 +34,8 @@ class Search extends Component {
 				movies: [ ...movies ],
 				totalResults: data.total_results
 			});
+
 			// this.isAlreadyListed(movieIds);
-			// console.log('LISTED???', this.state.alreadyListed, movieIds);
 		});
 	};
 	isAlreadyListed = async (searchReturn) => {
@@ -80,7 +80,14 @@ class Search extends Component {
 	closeMovieInfo = () => {
 		this.setState({ currentMovie: null });
 	};
-
+	handleDelete = async (movie) => {
+		await axios.delete(process.env.REACT_APP_API_URL + '/movies/' + movie.id, {
+			headers: {
+				Authorization: window.localStorage.getItem('token')
+			}
+		});
+		this.isAlreadyListed();
+	};
 	render() {
 		const numberPages = Math.floor(this.state.totalResults / 21);
 		const user = getUser();
@@ -146,6 +153,7 @@ class Search extends Component {
 							alreadyListed={this.state.alreadyListed}
 							currentMovie={this.state.currentMovie}
 							closeMovieInfo={this.closeMovieInfo}
+							handleDelete={this.handleDelete}
 						/>
 					</div>
 				)}

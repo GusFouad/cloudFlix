@@ -1,11 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 import { getMovies } from './../services/movieService';
-const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, isAlreadyListed, alreadyListed, user }) => {
+const MovieInfo = ({
+	handleDelete,
+	closeMovieInfo,
+	currentMovie,
+	onClickAdd,
+	isAlreadyListed,
+	alreadyListed,
+	user
+}) => {
 	onClickAdd = async () => {
 		const movie = {
 			movieId: currentMovie.id
 		};
+
 		if (user) {
 			return await axios
 				.post(process.env.REACT_APP_API_URL + '/movies/add', movie, {
@@ -48,9 +57,17 @@ const MovieInfo = ({ closeMovieInfo, currentMovie, onClickAdd, isAlreadyListed, 
 						<p>{currentMovie.overview}</p>
 					</div>
 					{alreadyListed === null ? (
-						<button onClick={onClickAdd}>Add To Watch List</button>
+						<div className="buttons-movie-info">
+							<button onClick={onClickAdd}>Add To Watch List</button>
+							<button onClick={() => handleDelete(currentMovie)} disabled>
+								Remove From List
+							</button>
+						</div>
 					) : (
-						<h6>This movie is on your list!</h6>
+						<div className="buttons-movie-info">
+							<p>This movie is on your list!</p>
+							<button onClick={() => handleDelete(currentMovie)}>Remove From List</button>
+						</div>
 					)}
 				</div>
 			</div>

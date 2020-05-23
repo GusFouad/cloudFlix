@@ -58,11 +58,7 @@ li a {
 .navbar-sidenav li {
 	padding: 2rem;
 }
-h6 {
-	background: #47e747;
-	padding: 1rem;
-	width: 50%;
-}
+
 .back-button {
 	display: flex;
 	width: 50% !important;
@@ -73,4 +69,23 @@ h6 {
 }
 .add-circle {
 	margin: 0;
+}
+@media only screen and (max-width: 740px) {
+	.table-media {
+		display: none;
+	}
+}
+.buttons-movie-info {
+	display: flex;
+	padding: 0;
+}
+.buttons-movie-info p {
+	margin: 0;
+	padding: 0 1rem;
+	background: #47e747;
+	width: 50%;
+}
+.buttons-movie-info button {
+	margin: 0 2rem;
+	width: 50%;
 }

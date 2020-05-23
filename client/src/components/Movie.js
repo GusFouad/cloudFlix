@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.jpg';
 const Movie = (props) => {
-	// console.log('IS IT LISTED', props.alreadyListed);
 	return (
 		<div className="col s12 m6 l3">
 			<div className="card">

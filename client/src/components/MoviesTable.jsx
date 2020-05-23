@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { getUser } from '../services/authService';
+import { getMovies } from './../services/movieService';
 import _ from 'lodash';
+import MovieInfo from './MovieInfo';
 class MoviesTable extends Component {
 	columns = [
 		{
@@ -34,27 +37,54 @@ class MoviesTable extends Component {
 
 		return _.get(movie, column.path);
 	};
+	isAlreadyListed = async (searchReturn) => {
+		const { data } = await getMovies();
+		let listed = null;
+		for (let i = 0; i < data.length; i++) {
+			if (data[i].movieId === this.state.currentMovie.id) {
+				listed = 'Listed';
+			}
+		}
+		console.log(this.state.alreadyListed);
+		this.setState({ alreadyListed: listed });
+	};
+
 	render() {
+		const user = getUser();
 		const { movies } = this.props;
 		return (
-			<table className="table">
-				<thead>
-					<tr>
-						{this.columns.map((column) => {
-							return <th key={column.path || column.key}> {column.lable} </th>;
-						})}
-					</tr>
-				</thead>
-				<tbody>
-					{movies.map((movie) => (
-						<tr key={movie.id || movie.key}>
-							{this.columns.map((column) => (
-								<td key={column.key || column.path}>{this.renderCell(movie, column)}</td>
+			<div>
+				<div className="table-media">
+					<table className="table">
+						<thead>
+							<tr>
+								{this.columns.map((column) => {
+									return <th key={column.path || column.key}> {column.lable} </th>;
+								})}
+							</tr>
+						</thead>
+						<tbody>
+							{movies.map((movie) => (
+								<tr key={movie.id || movie.key}>
+									{this.columns.map((column) => (
+										<td key={column.key || column.path}>{this.renderCell(movie, column)}</td>
+									))}
+								</tr>
 							))}
-						</tr>
-					))}
-				</tbody>
-			</table>
+						</tbody>
+					</table>
+				</div>
+				<div className="table-small-media">
+					<MovieInfo
+						user={user}
+						isAlreadyListed={this.isAlreadyListed}
+						alreadyListed={this.state.alreadyListed}
+						currentMovie={this.state.currentMovie}
+						closeMovieInfo={this.closeMovieInfo}
+						handleDelete={this.handleDelete}
+					/>
+				</div>
+			</div>
 		);
 	}
 }
