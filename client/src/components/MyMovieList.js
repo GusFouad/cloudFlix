@@ -67,7 +67,7 @@ class MyMovieList extends Component {
 				<p>You have {count} movies on your watchlist</p>
 				{this.state.currentMovie === null ? (
 					<div>
-						<MoviesTable movies={movies} onDelete={this.andleDelete} poster={movies.poster} />
+						<MoviesTable movies={movies} onDelete={this.handleDelete} poster={movies.poster} />
 						<div className="my-movie-list">
 							<MovieList
 								onClickQuickAdd={this.onClickQuickAdd}
