@@ -24,7 +24,7 @@ const MovieInfo = ({
 				})
 				.then((r) => isAlreadyListed(), console.log('Successfully added to your watchlist', user));
 		} else {
-			window.location = '/login';
+			window.location = '/cloudflix/login';
 		}
 	};
 	return (
