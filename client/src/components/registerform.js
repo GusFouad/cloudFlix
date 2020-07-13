@@ -39,7 +39,7 @@ class RegisterForm extends Component {
 			const response = await register(this.state.account);
 			console.log(response);
 			localStorage.setItem('token', response.headers['auth-token']);
-			window.location = '/search';
+			window.location = '/cloudflix/search';
 		} catch (ex) {
 			if (ex.response && ex.response === 400) {
 				const errors = { ...this.state.errors };
@@ -93,7 +93,7 @@ class RegisterForm extends Component {
 				</form>
 				<div className="home">
 					<p>Already have an account?</p>
-					<a style={{ textAlign: 'center' }} href="/login">
+					<a style={{ textAlign: 'center' }} href="/cloudflix/login">
 						Click here to Login!
 					</a>
 				</div>

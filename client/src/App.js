@@ -25,7 +25,7 @@ class App extends Component {
 				{/* <NavBar user={user} /> */}
 				<main className="port-home">
 					<Switch>
-						<Route path="/cloudflix" component={CloudFlix} />
+						<Route path="/cloudflix/home" component={CloudFlixHome} />
 						{/* <Route path="/cloudflix/mylist" component={MyMovieList} />
 						<Route path="/cloudflix/logout" component={Logout} />
 						<Route path="/cloudflix/login" component={LoginForm} />

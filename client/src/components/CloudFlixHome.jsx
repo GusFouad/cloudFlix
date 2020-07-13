@@ -20,10 +20,10 @@ class CloudFlixHome extends Component {
 				<h2>Welcome to cloud flix</h2>
 				<h3>Go ahead and search your fav movies and add them to your list!</h3>
 				<p>
-					First time? <a href="/register">Register Here!</a>
+					First time? <a href="/cloudflix/register">Register Here!</a>
 				</p>
 				<p>
-					Already have an account? <a href="/login">Login Here!</a>
+					Already have an account? <a href="/cloudflix/login">Login Here!</a>
 				</p>
 				<div>
 					{this.state.movies.map((movie, i) => {

@@ -39,7 +39,7 @@ class LoginForm extends Component {
 			const { account } = this.state;
 			const { data: jwt } = await login(account.username, account.password);
 			localStorage.setItem('token', jwt);
-			window.location = '/mylist';
+			window.location = '/cloudflix/mylist';
 		} catch (ex) {
 			if (ex.response && ex.response === 400) {
 				const errors = { ...this.state.errors };
@@ -90,7 +90,7 @@ class LoginForm extends Component {
 				</form>
 				<div className="home">
 					<p>Dont have an account?</p>
-					<a href="/register">Click here to Register!</a>
+					<a href="/cloudflix/register">Click here to Register!</a>
 				</div>
 			</div>
 		);
