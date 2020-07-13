@@ -13,7 +13,7 @@ const PortHome = () => {
 				<div>
 					<div className="header">
 						<h1>Gus Fouad</h1>
-						<span class="sexy-line" />
+						<span className="sexy-line" />
 					</div>
 
 					<a href="http://www.github.com/gusfouad">

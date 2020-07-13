@@ -32,11 +32,11 @@ class Footer extends Component {
 	};
 	render() {
 		return (
-			<div>
+			<div className="footer-section">
 				<h2 id="contact" className="tech-skills">
 					Contact Me
 				</h2>
-				<span class="sexy-line" />
+				<span className="sexy-line" />
 				<div className="footer row">
 					<form onSubmit={this.handleSubmit} className="footer-form">
 						<div className="row form-name">

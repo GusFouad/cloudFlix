@@ -176,6 +176,9 @@ input {
 	height: 100%;
 	padding: 2rem;
 }
+.footer-section {
+	margin-top: 3rem;
+}
 
 .footer {
 	background-color: black;

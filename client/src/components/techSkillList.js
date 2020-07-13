@@ -18,7 +18,7 @@ const TechList = () => {
 			<h2 id="skills" className="tech-skills">
 				Technical Skills
 			</h2>
-			<span class="sexy-line" />
+			<span className="sexy-line" />
 			<ul className="tech-list">
 				<li className="tech-img">
 					<img src={techhtml} />
