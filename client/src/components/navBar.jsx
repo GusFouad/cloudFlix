@@ -45,10 +45,10 @@ class NavBar extends Component {
 								{user && (
 									<React.Fragment>
 										<li>
-											<NavLink to="/mylist">{user.name}</NavLink>
+											<NavLink to="/cloudflix/mylist">{user.name}</NavLink>
 										</li>
 										<li>
-											<NavLink to="/logout">Log Out</NavLink>
+											<NavLink to="/cloudflix/logout">Log Out</NavLink>
 										</li>
 									</React.Fragment>
 								)}
@@ -59,28 +59,28 @@ class NavBar extends Component {
 				<div className="section navbar-sidenav">
 					<ul id="slide-out" className="sidenav sidenav-close col s12 center-align section divider">
 						<li>
-							<NavLink to="/search">Search</NavLink>
+							<NavLink to="/cloudflix/search">Search</NavLink>
 						</li>
 						<li>
-							<NavLink to="mylist">My List</NavLink>
+							<NavLink to="/cloudflix/mylist">My List</NavLink>
 						</li>
 						{!user && (
 							<React.Fragment>
 								<li>
-									<NavLink to="/login">Login</NavLink>
+									<NavLink to="/cloudflix/login">Login</NavLink>
 								</li>
 								<li>
-									<NavLink to="/register">Register</NavLink>
+									<NavLink to="/cloudflix/register">Register</NavLink>
 								</li>
 							</React.Fragment>
 						)}
 						{user && (
 							<React.Fragment>
 								<li>
-									<NavLink to="/mylist">{user.name}</NavLink>
+									<NavLink to="/cloudflix/mylist">{user.name}</NavLink>
 								</li>
 								<li>
-									<NavLink to="/logout">Log Out</NavLink>
+									<NavLink to="/cloudflix/logout">Log Out</NavLink>
 								</li>
 							</React.Fragment>
 						)}
