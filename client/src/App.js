@@ -7,8 +7,8 @@ import LoginForm from './components/loginForm';
 import Logout from './components/logoutForm';
 import Search from './components/search';
 import RegisterForm from './components/registerform';
-import CloudFlix from './components/CloudFlix';
 import CloudFlixHome from './components/CloudFlixHome';
+import CloudFlix from './components/CloudFlix';
 import Home from './components/Home';
 
 class App extends Component {

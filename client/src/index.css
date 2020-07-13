@@ -59,6 +59,9 @@ li a {
 .material-icons {
 	margin: 1.2rem 0;
 }
+input {
+	color: white;
+}
 .search-input {
 	width: 100%;
 }

@@ -77,7 +77,7 @@ const Portfolio = () => {
 								</p>
 							</div>
 							<div class="card-action">
-								<a href="http://gusfouad.com/juno.html">View Site</a>
+								<a href="http://localhost:3000/juno.html">View Site</a>
 							</div>
 						</div>
 					</div>
