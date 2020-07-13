@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieList from './MovieList';
-class Home extends Component {
+class CloudFlixHome extends Component {
 	state = { movies: [] };
 	async componentDidMount() {
 		let movieData = [];
@@ -36,4 +36,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default CloudFlixHome;

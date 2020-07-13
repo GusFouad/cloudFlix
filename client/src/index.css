@@ -4,8 +4,11 @@ body {
 		"Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: black;
 }
-
+i {
+	margin: 20px;
+}
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -23,12 +26,16 @@ p {
 }
 
 .card .card-content {
-	padding: 2rem 0 0 !important;
+	padding: 1rem 0 0 !important;
 	text-align: center;
+}
+.card-title {
+	font-size: 2rem !important;
 }
 .home {
 	text-align: center;
 }
+
 .cloudflix-nav,
 h1 {
 	font-family: 'Pacifico', cursive;
@@ -84,7 +91,169 @@ li a {
 	margin: 0 2rem;
 	width: 50%;
 }
+.header h1 {
+	margin: 0;
+}
+.home-container {
+	margin: 0;
+}
+.home a:hover {
+	color: white;
+}
+.home-nav {
+	display: flex;
+	justify-content: space-around;
+}
 
+.portfolio-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+}
+.hidden-text {
+	visibility: hidden;
+}
+
+.portfolio-card {
+	background-color: transparent;
+	border: 1px solid white;
+	min-width: 250px;
+	width: 30%;
+	margin: 1rem;
+}
+.portfolio-card:hover {
+	border: 3px solid #ffab40;
+}
+
+.headerSection {
+	height: 85vh;
+}
+.portfolio-section {
+	margin: 4rem 0;
+}
+
+.home-container h1 {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.tech-skills {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	text-align: center;
+	margin: 1rem 0;
+}
+.sexy-line {
+	display: block;
+	border: none;
+	color: white;
+	height: 1px;
+	background: black;
+	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(lightgray), to(black));
+}
+.card-config {
+	background-color: transparent !important;
+	margin: 0 !important;
+}
+
+.card-config p {
+	margin: 0 1rem !important;
+}
+
+.dropdown-card {
+	display: none;
+}
+.dropdown-card:hover {
+	display: inline-block;
+}
+.card-action {
+	/* padding: 1rem !important; */
+}
+.port-home {
+	background-color: black;
+	color: #fff;
+}
+.port-img {
+	width: 50%;
+	height: 100%;
+	padding: 2rem;
+}
+
+.footer {
+	background-color: black;
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0 !important;
+}
+.footer-form {
+	background-color: #5d5d5d;
+	width: 70%;
+	height: 80vh;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2rem;
+
+	justify-content: center;
+}
+.form-message {
+	width: 100%;
+}
+.form-email,
+.form-name {
+	width: 40%;
+}
+.tech-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.card .card-image img {
+	width: 80% !important;
+	margin: 0 auto;
+}
+.tech-img {
+	min-width: 121px;
+	width: 10%;
+	margin: 3%;
+	text-align: center;
+}
+.header-img {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.header-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 1rem;
+	font-size: 1.5rem;
+}
+.section-header {
+	margin-bottom: 2rem;
+}
+.blurb {
+	font-size: 1.5rem;
+	color: #ffd8a6;
+	margin: 2rem;
+	padding: 1rem 0;
+}
+.first-card,
+.second-card,
+.third-card {
+	width: 30%;
+	justify-content: center;
+}
+
+.header-img img {
+	width: 10%;
+	margin: 15px;
+	filter: invert(1);
+	justify-content: center;
+}
+.tech-img img {
+	width: 121px;
+	height: 121px;
+}
 @media only screen and (max-width: 740px) {
 	.table-media {
 		display: none;

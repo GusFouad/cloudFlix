@@ -22,23 +22,23 @@ class NavBar extends Component {
 							<a href="#" data-target="slide-out" className="sidenav-trigger right valign-wrapper ">
 								<i className="material-icons">menu</i>
 							</a>
-							<Link to="#" className="brand-logo black-text cloudflix-nav">
+							<Link to="/cloudflix/home" className="brand-logo black-text cloudflix-nav">
 								CloudFlix
 							</Link>
 							<ul id="nav-mobile" className="right hide-on-med-and-down">
 								<li>
-									<NavLink to="/search">Search</NavLink>
+									<NavLink to="/cloudflix/search">Search</NavLink>
 								</li>
 								<li>
-									<NavLink to="mylist">My List</NavLink>
+									<NavLink to="/cloudflix/mylist">My List</NavLink>
 								</li>
 								{!user && (
 									<React.Fragment>
 										<li>
-											<NavLink to="/login">Login</NavLink>
+											<NavLink to="/cloudflix/login">Login</NavLink>
 										</li>
 										<li>
-											<NavLink to="/register">Register</NavLink>
+											<NavLink to="/cloudflix/register">Register</NavLink>
 										</li>
 									</React.Fragment>
 								)}

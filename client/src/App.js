@@ -7,6 +7,8 @@ import LoginForm from './components/loginForm';
 import Logout from './components/logoutForm';
 import Search from './components/search';
 import RegisterForm from './components/registerform';
+import CloudFlix from './components/CloudFlix';
+import CloudFlixHome from './components/CloudFlixHome';
 import Home from './components/Home';
 
 class App extends Component {
@@ -20,14 +22,17 @@ class App extends Component {
 		const { user } = this.state;
 		return (
 			<React.Fragment>
-				<NavBar user={user} />
-				<main className="container">
+				{/* <NavBar user={user} /> */}
+				<main className="port-home">
 					<Switch>
-						<Route path="/mylist" component={MyMovieList} />
-						<Route path="/logout" component={Logout} />
-						<Route path="/login" component={LoginForm} />
-						<Route path="/register" component={RegisterForm} />
-						<Route path="/search" component={Search} />
+						<Route path="/cloudflix" component={CloudFlix} />
+						{/* <Route path="/cloudflix/mylist" component={MyMovieList} />
+						<Route path="/cloudflix/logout" component={Logout} />
+						<Route path="/cloudflix/login" component={LoginForm} />
+						<Route path="/cloudflix/register" component={RegisterForm} />
+						<Route path="/cloudflix/search" component={Search} /> */}
+						{/* <Route path="/cloudflix/home" component={CloudFlixHome} /> */}
+						{/* <Route path="/juno" component={Juno} /> */}
 						<Route path="/" component={Home} />
 					</Switch>
 				</main>
