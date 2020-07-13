@@ -14,7 +14,7 @@ import techsass from './tech-skill-logos/tech-skill-sass.png';
 import techvscode from './tech-skill-logos/tech-skill-vscode.png';
 const TechList = () => {
 	return (
-		<div>
+		<div className="portfolio-section">
 			<h2 id="skills" className="tech-skills">
 				Technical Skills
 			</h2>
