@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-scroll';
 const HomeNav = () => {
 	return (
-		<div>
+		<div className="homepage">
 			<nav className="home-nav-bar ">
 				<div className="container">
 					<div className="nav-wrapper">

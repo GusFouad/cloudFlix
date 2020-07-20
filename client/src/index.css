@@ -7,6 +7,9 @@ body {
 	background-color: black;
 	width: 100%;
 }
+.homepage {
+	width: 100%;
+}
 i {
 	margin: 20px;
 }
@@ -106,6 +109,7 @@ input {
 	position: fixed;
 	background-color: #e2e2e2 !important;
 	margin-bottom: 2rem;
+	z-index: 1;
 }
 
 .home-nav {
@@ -113,7 +117,7 @@ input {
 	justify-content: space-around;
 }
 .home-nav-text {
-	color: black;
+	color: black !important;
 	font-size: 2rem;
 }
 
@@ -285,6 +289,11 @@ input {
 }
 @media only screen and (min-width: 740px) {
 	.my-movie-list {
+		display: none;
+	}
+}
+@media only screen and (max-width: 836px) {
+	.header-container {
 		display: none;
 	}
 }
