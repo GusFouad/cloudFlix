@@ -102,9 +102,19 @@ input {
 .home a:hover {
 	color: white;
 }
+.home-nav-bar {
+	position: fixed;
+	background-color: #e2e2e2 !important;
+	margin-bottom: 2rem;
+}
+
 .home-nav {
 	display: flex;
 	justify-content: space-around;
+}
+.home-nav-text {
+	color: black;
+	font-size: 2rem;
 }
 
 .portfolio-container {
@@ -124,18 +134,20 @@ input {
 	margin: 1rem;
 }
 .portfolio-card:hover {
-	border: 3px solid #ffab40;
+	border: 1px solid #ffab40;
 }
 
-.headerSection {
-	height: 85vh;
-}
 .portfolio-section {
 	margin: 4rem 0;
 }
 
 .home-container h1 {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	margin-top: 6rem;
+	margin-bottom: 0;
+}
+.profile-links {
+	margin-top: 0rem;
 }
 .tech-skills {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -243,6 +255,7 @@ input {
 	font-size: 1.5rem;
 	color: #ffd8a6;
 	margin: 3rem;
+	margin-bottom: 0;
 	padding: 1rem 0;
 }
 .first-card,

@@ -13,7 +13,7 @@ const Portfolio = () => {
 			<div className="portfolio-container">
 				<div className="row portfolio-card ">
 					<a className="port-click" target="_blank" href="http://www.gusfouad.com/cloudflix/home">
-						<div>
+						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">CloudFlix</span>
 								<div className="card-image">
@@ -41,7 +41,7 @@ const Portfolio = () => {
 				</div>
 				<div className="row portfolio-card col m12">
 					<a className="port-click" target="_blank" href="http://dumbmoney.ca">
-						<div>
+						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">DumbMoney</span>
 								<div className="card-image">
@@ -68,7 +68,7 @@ const Portfolio = () => {
 				</div>
 				<div className="row portfolio-card col m12">
 					<a className="port-click" target="_blank" href="http://localhost:3000/juno.html">
-						<div>
+						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">Juno Challenge</span>
 								<div className="card-image">

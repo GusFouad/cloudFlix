@@ -9,7 +9,7 @@ import Logout from '../components/logoutForm';
 import Search from '../components/search';
 import RegisterForm from '../components/registerform';
 import CloudFlixHome from './CloudFlixHome';
-
+import { Helmet } from 'react-helmet';
 class CloudFlix extends Component {
 	state = { movies: [], user: {} };
 	async componentDidMount() {
@@ -28,23 +28,11 @@ class CloudFlix extends Component {
 		const { user } = this.state;
 		return (
 			<React.Fragment>
+				<Helmet>
+					<title>CloudFlix</title>
+				</Helmet>
 				<NavBar user={user} />
 				<main className="container">
-					{/* <h1>CloudFlix</h1>
-					<h2>Welcome to cloud flix</h2>
-					<h3>Go ahead and search your fav movies and add them to your list!</h3>
-					<p>
-						First time? <a href="/register">Register Here!</a>
-					</p>
-					<p>
-						Already have an account? <a href="/login">Login Here!</a>
-					</p>
-					<div>
-						{this.state.movies.map((movie, i) => {
-							console.log('FIGURING MOVIE OUT ', movie);
-							return <img src={`http://image.tmdb.org/t/p/w185${movie[0].poster_path}`} />;
-						})} */}
-					{/* </div> */}
 					<Switch>
 						<Route path="/cloudflix/mylist" component={MyMovieList} />
 						<Route path="/cloudflix/logout" component={Logout} />
