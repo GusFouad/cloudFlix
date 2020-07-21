@@ -208,7 +208,7 @@ input {
 	margin-bottom: 0 !important;
 }
 .footer-form {
-	background-color: #5d5d5d;
+	background-color: #e2e2e2;
 	width: 70%;
 	height: 80vh;
 	display: flex;
@@ -217,12 +217,22 @@ input {
 
 	justify-content: center;
 }
+.footer-form label,
+.footer-form input {
+	color: black !important;
+}
 .form-message {
 	width: 100%;
 }
 .form-email,
 .form-name {
 	width: 40%;
+}
+.form-name {
+	margin-left: 0 !important;
+}
+.form-email {
+	margin-right: 0 !important;
 }
 .tech-list {
 	display: flex;
@@ -295,5 +305,8 @@ input {
 @media only screen and (max-width: 836px) {
 	.header-container {
 		display: none;
+	}
+	.portfolio-card {
+		margin: 0 auto;
 	}
 }

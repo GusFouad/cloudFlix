@@ -67,7 +67,7 @@ const Portfolio = () => {
 					</a>
 				</div>
 				<div className="row portfolio-card col m12">
-					<a className="port-click" target="_blank" href="http://localhost:3000/juno.html">
+					<a className="port-click" target="_blank" href="http://www.gusfouad/juno.html">
 						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">Juno Challenge</span>
@@ -82,11 +82,12 @@ const Portfolio = () => {
 									</p>
 									<p className="hidden-text">
 										monthly subscriptions,affiliate programs, authentication, authorization, and
-										course tracking management and then som is this enough.lets add onre more
+										course tracking management and then som is this enough.lets add onre more, we
+										need to add one
 									</p>
 								</div>
 								<div className="card-action">
-									<a target="_blank" href="http://localhost:3000/juno.html">
+									<a target="_blank" href="http://www.gusfouad/juno.html">
 										View Site
 									</a>
 								</div>
