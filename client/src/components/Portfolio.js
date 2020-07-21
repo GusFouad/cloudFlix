@@ -67,7 +67,7 @@ const Portfolio = () => {
 					</a>
 				</div>
 				<div className="row portfolio-card col m12">
-					<a className="port-click" target="_blank" href="http://www.gusfouad/juno.html">
+					<a className="port-click" target="_blank" href="https://juno-techchallenge.herokuapp.com/">
 						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">Juno Challenge</span>
@@ -87,7 +87,7 @@ const Portfolio = () => {
 									</p>
 								</div>
 								<div className="card-action">
-									<a target="_blank" href="http://www.gusfouad/juno.html">
+									<a target="_blank" href="https://juno-techchallenge.herokuapp.com/">
 										View Site
 									</a>
 								</div>
