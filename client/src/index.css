@@ -22,6 +22,9 @@ code {
 	justify-content: center;
 	background-color: antiquewhite;
 }
+.page-list {
+	background: bisque;
+}
 p {
 	padding: 1rem;
 }
