@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getUser } from '../services/authService';
 import { getMovies } from './../services/movieService';
 import _ from 'lodash';
-import MovieInfo from './MovieInfo';
+
 class MoviesTable extends Component {
 	columns = [
 		{

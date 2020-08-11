@@ -12,12 +12,17 @@ const Portfolio = () => {
 			<span className="sexy-line" />
 			<div className="portfolio-container">
 				<div className="row portfolio-card ">
-					<a className="port-click" target="_blank" href="http://www.gusfouad.com/cloudflix/home">
+					<a
+						className="port-click"
+						target="_blank"
+						rel="noopener noreferrer"
+						href="http://www.gusfouad.com/cloudflix/home"
+					>
 						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">CloudFlix</span>
 								<div className="card-image">
-									<img src={cfThumbnail} className="port-img" />
+									<img src={cfThumbnail} className="port-img" alt="cloudflix snapshot" />
 								</div>
 								<p>Full Stack</p>
 								<div className="card-content">
@@ -31,7 +36,11 @@ const Portfolio = () => {
 									</p>
 								</div>
 								<div className="card-action">
-									<a target="_blank" href="http://www.gusfouad.com/cloudflix/home">
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="http://www.gusfouad.com/cloudflix/home"
+									>
 										View Site
 									</a>
 								</div>
@@ -40,12 +49,12 @@ const Portfolio = () => {
 					</a>
 				</div>
 				<div className="row portfolio-card col m12">
-					<a className="port-click" target="_blank" href="http://dumbmoney.ca">
+					<a className="port-click" target="_blank" rel="noopener noreferrer" href="http://dumbmoney.ca">
 						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">DumbMoney</span>
 								<div className="card-image">
-									<img src={dmThumbnail} className="port-img" />
+									<img src={dmThumbnail} className="port-img" alt="dumbmoney website screenshot" />
 								</div>
 								<p>Word Press</p>
 								<div className="card-content">
@@ -58,7 +67,7 @@ const Portfolio = () => {
 									<p className="hidden-text">line</p>
 								</div>
 								<div className="card-action">
-									<a target="_blank" href="http://dumbmoney.ca">
+									<a target="_blank" rel="noopener noreferrer" href="http://dumbmoney.ca">
 										View Site
 									</a>
 								</div>
@@ -67,12 +76,17 @@ const Portfolio = () => {
 					</a>
 				</div>
 				<div className="row portfolio-card col m12">
-					<a className="port-click" target="_blank" href="https://juno-techchallenge.herokuapp.com/">
+					<a
+						className="port-click"
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://juno-techchallenge.herokuapp.com/"
+					>
 						<div className="card-hover">
 							<div className="card card-config">
 								<span className="card-title">Juno Challenge</span>
 								<div className="card-image">
-									<img src={jThumbnail} className="port-img" />
+									<img src={jThumbnail} className="port-img" alt="Juno Tech Challenge Screenshot" />
 								</div>
 								<p>HTML & CSS</p>
 								<div className="card-content">
@@ -87,7 +101,11 @@ const Portfolio = () => {
 									</p>
 								</div>
 								<div className="card-action">
-									<a target="_blank" href="https://juno-techchallenge.herokuapp.com/">
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://juno-techchallenge.herokuapp.com/"
+									>
 										View Site
 									</a>
 								</div>

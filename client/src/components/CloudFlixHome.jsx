@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MovieList from './MovieList';
 class CloudFlixHome extends Component {
 	state = { movies: [] };
 	async componentDidMount() {
@@ -28,7 +27,12 @@ class CloudFlixHome extends Component {
 				<div>
 					{this.state.movies.map((movie, i) => {
 						console.log('FIGURING MOVIE OUT ', movie);
-						return <img src={`http://image.tmdb.org/t/p/w185${movie[0].poster_path}`} />;
+						return (
+							<img
+								src={`http://image.tmdb.org/t/p/w185${movie[0].poster_path}`}
+								alt="feature movie poster"
+							/>
+						);
 					})}
 				</div>
 			</div>

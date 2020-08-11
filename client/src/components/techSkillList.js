@@ -1,7 +1,6 @@
 import React from 'react';
 import techCss from './tech-skill-logos/tech-skill-css.png';
 import techwordpress from './tech-skill-logos/tech-skill-wordpress.png';
-import techgit from './tech-skill-logos/tech-skill-git.png';
 import techgithub from './tech-skill-logos/tech-skill-github.png';
 import techheroku from './tech-skill-logos/tech-skill-heroku.png';
 import techhtml from './tech-skill-logos/tech-skill-html.png';
@@ -21,53 +20,53 @@ const TechList = () => {
 			<span className="sexy-line" />
 			<ul className="tech-list">
 				<li className="tech-img">
-					<img src={techhtml} />
+					<img src={techhtml} alt="HTML logo" />
 					<p>HTML 5</p>
 				</li>
 				<li className="tech-img">
-					<img src={techCss} />
+					<img src={techCss} alt="CSS logo" />
 					<p>CSS3</p>
 				</li>
 				<li className="tech-img">
-					<img src={techjs} />
+					<img src={techjs} alt="JavaScript logo" />
 					<p>JavaScript</p>
 				</li>
 				<li className="tech-img">
-					<img src={techreact} />
+					<img src={techreact} alt="React logo" />
 					<div>
 						<p>React</p>
 					</div>
 				</li>
 				<li className="tech-img">
-					<img src={techsass} />
+					<img src={techsass} alt="Sass logo" />
 					<p>SASS</p>
 				</li>
 				<li className="tech-img">
-					<img src={techjquery} />
+					<img src={techjquery} alt="JQuery logo" />
 					<p>JQuery</p>
 				</li>
 				<li className="tech-img">
-					<img src={techpython} />
+					<img src={techpython} alt="Python logo" />
 					<p>Python</p>
 				</li>
 				<li className="tech-img">
-					<img src={technodejs} />
+					<img src={technodejs} alt="Node.js logo" />
 					<p>NodeJS</p>
 				</li>
 				<li className="tech-img">
-					<img src={techheroku} />
+					<img src={techheroku} alt="Heroku logo" />
 					<p>Heroku</p>
 				</li>
 				<li className="tech-img">
-					<img src={techwordpress} />
+					<img src={techwordpress} alt="WordPress logo" />
 					<p>WordPress</p>
 				</li>
 				<li className="tech-img">
-					<img src={techgithub} style={{ filter: 'invert(1)' }} />
+					<img src={techgithub} alt="Github logo" style={{ filter: 'invert(1)' }} />
 					<p>GitHub</p>
 				</li>
 				<li className="tech-img">
-					<img src={techvscode} />
+					<img src={techvscode} alt="Visual Studio Code logo" />
 					<p>VS Code</p>
 				</li>
 			</ul>

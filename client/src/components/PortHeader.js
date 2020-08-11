@@ -14,10 +14,10 @@ const PortHome = () => {
 					<div className="header">
 						<h1>Gus Fouad</h1>
 						<div className="profile-links">
-							<a target="_blank" href="http://www.github.com/gusfouad">
+							<a target="_blank" rel="noopener noreferrer" href="http://www.github.com/gusfouad">
 								<i className="fab fa-github  fa-3x" />
 							</a>
-							<a target="_blank" href="https://www.linkedin.com/in/gusfouad/">
+							<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/gusfouad/">
 								<i className="fab fa-linkedin fa-3x" />
 							</a>
 						</div>
@@ -31,14 +31,14 @@ const PortHome = () => {
 						</div>
 						<div className=" header-container">
 							<div className="header-img first-card">
-								<img src={fullstack} />
+								<img src={fullstack} alt="full-stack logo" />
 								<p>Full-stack Developer</p>
 							</div>
 							<div className="header-img second-card" />
 							<div className="header-img third-card" />
 							<div className="header-img first-card" />
 							<div className="header-img second-card">
-								<img src={film} />
+								<img src={film} alt="Movie reel logo" />
 								<p>Filmmaker</p>
 							</div>
 							<div className="header-img third-card" />
@@ -46,7 +46,7 @@ const PortHome = () => {
 							<div className="header-img first-card" />
 
 							<div className="header-img third-card">
-								<img src={chess} />
+								<img src={chess} alt="chess piece logo" />
 								<p>Chess Champion</p>
 							</div>
 						</div>
