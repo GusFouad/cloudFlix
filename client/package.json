@@ -13,7 +13,7 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.15",
     "materialize-css": "^1.0.0-rc.2",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
